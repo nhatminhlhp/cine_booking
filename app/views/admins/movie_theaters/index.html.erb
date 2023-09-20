@@ -1,0 +1,30 @@
+<div class="custom-container" style="width: 100%">
+    <h1>Danh sách rạp chiếu phim</h1>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Tên rạp</th>
+                <th>Địa chỉ</th>
+                <th>Tỉnh/thành phố</th>
+                <th>Thao tác</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% @movie_theaters.each do |movie_theater| %>
+                <tr>
+                    <td><%= movie_theater.name %></td>
+                    <td><%= movie_theater.address %></td>
+                    <td><%= movie_theater.province %></td>
+                    <td>
+                        <a href="#" class="btn btn-primary btn-sm">Edit</a>
+                        <a href="#" class="btn btn-danger btn-sm">Delete</a>
+                    </td>
+                </tr>
+            <% end %>
+        </tbody>
+    </table>
+    <div class="center">
+      <%= paginate @movie_theaters %>
+    </div>
+</div>
+

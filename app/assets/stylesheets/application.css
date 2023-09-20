@@ -22,3 +22,131 @@
 a {
   cursor: pointer !important;
 }
+
+body {
+  background-color: #f8f9fa;
+  padding-top: 20px;
+}
+
+.container {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+}
+
+h1 {
+  color: #007bff;
+  text-align: center;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: center !important;
+}
+
+th, td {
+  padding: 8px;
+  text-align: center !important;
+  border-bottom: 1px solid #ddd;
+  width: 15%
+}
+
+th {
+  background-color: #007bff;
+  color: #fff;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.btn {
+  padding: 5px 10px;
+}
+.custom-container {
+  width: 80%;
+}
+
+.custom-container h1 {
+  margin-top: 20px;
+  text-align: center;
+  color: #007bff;
+}
+
+
+.custom-container table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.custom-container th,
+.custom-container td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+.custom-container tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.custom-container .btn {
+  padding: 5px 10px;
+}
+
+.custom-container .btn-primary {
+  background-color: #007bff;
+  color: #fff;
+  margin-right: 5px;
+}
+
+/* Định dạng cho nút Delete */
+.custom-container .btn-danger {
+  background-color: #dc3545;
+  color: #fff;
+}
+
+.pagination a, .pagination span.current, .pagination span.gap {
+  float: left;
+  padding: 0 14px;
+  line-height: 38px;
+  text-decoration: none;
+  background-color: white;
+  border: 1px solid #DDD;
+  border-left-width: 0;
+}
+
+.pagination {
+  border-left: 1px solid #ddd;
+  .first{
+      padding : 0;
+      float: none;
+      border: none;
+  }
+  .prev {
+      padding : 0;
+      float: none;
+      border: none;
+  }
+  .page{
+      padding : 0;
+      float: none;
+      border: none;
+  }
+  .next{
+      padding : 0;
+      float: none;
+      border: none;
+  }
+  .last{
+      padding : 0;
+      float: none;
+      border: none;
+  }
+}
+.center {
+  text-align: center;
+}

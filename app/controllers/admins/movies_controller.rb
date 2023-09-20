@@ -2,7 +2,7 @@ class Admins::MoviesController < Admins::BaseController
   before_action :fetch_movie, only: %i[show, edit, update]
 
   def index
-    @movies = Movie.all
+    @movies = Movie.page(params[:page]).per(10)
   end
 
   def new

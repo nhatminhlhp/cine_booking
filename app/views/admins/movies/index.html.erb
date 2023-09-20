@@ -1,16 +1,36 @@
-<aside class="sidebar">
-  <div class="sidebar-header">
-    <h2>Menu</h2>
-  </div>
-  <ul class="nav flex-column">
-    <li class="nav-item">
-      <%= link_to "Trang chủ", "", class: "nav-link" %>
-    </li>
-    <li class="nav-item">
-      <%= link_to "Danh sách phim", "", class: "nav-link" %>
-    </li>
-    <li class="nav-item">
-      <%= link_to "Rạp chiếu", "", class: "nav-link" %>
-    </li>
-  </ul>
-</aside>
+<div class="custom-container" style="margin-left: 10px; width: 80%">
+    <h1 class="mt-5">Danh sách phim</h1>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Tên phim</th>
+                
+                <th>Diễn viên</th>
+                <th>Mô tả</th>
+                <th>Quốc gia</th>
+                <th>Thể loại</th>
+                <th>Ngày phát hành</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <% @movies.each do |movie| %>
+                <tr>
+                    <td><%= movie.name %></td>
+                    <td><%= movie.actors %></td>
+                    <td><%= movie.description %></td>
+                    <td><%= movie.country %></td>
+                    <td><%= movie.genre %></td>
+                    <td><%= movie.releaseDate.strftime("%d/%m/%Y") %></td>
+                    <td>
+                      <div href="#" class="btn btn-primary btn-sm">Edit</div>
+                      <div href="#" class="btn btn-danger btn-sm">Delete</div>
+                    </td>
+                </tr>
+            <% end %>
+        </tbody>
+    </table>
+    <div class="center">
+      <%= paginate @movies %>
+    </div>
+</div>

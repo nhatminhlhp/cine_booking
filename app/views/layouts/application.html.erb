@@ -13,15 +13,16 @@
 </head>
 
 <body>
-<% if @current_user.user? %>
+<% if @current_user&.user? %>
   <%= render partial: "layouts/user/header" %>
   <div style="padding-top:130px;padding-bottom:30px">
     <%= yield %>
   </div>
   <%= render partial: "layouts/user/footer" %>
 <% else %>
-  <div style="padding-top:130px;padding-bottom:30px">
-    <%= yield %>
+  <div class="admin-body" style="display: flex; height: 1100px">
+    <%= render partial: "layouts/admin/admin_header" %>
+      <%= yield %>
   </div>
 <% end %>
 </body>

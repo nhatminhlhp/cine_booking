@@ -12,7 +12,9 @@ Rails.application.routes.draw do
   end
 
   namespace :admins do
+    root :to => "movies#index"
     resources :movies
     resources :profile
+    resources :movie_theaters
   end
 end
