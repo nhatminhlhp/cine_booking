@@ -7,6 +7,12 @@ Rails.application.routes.draw do
   end
 
   namespace :users do
+    resources :movies
+    resources :profile
+  end
+
+  namespace :admins do
+    resources :movies
     resources :profile
   end
 end

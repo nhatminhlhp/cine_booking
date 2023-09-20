@@ -1,0 +1,24 @@
+<div class="container mt-4">
+  <div class="row">
+    <div class="col-md-4">
+      <% if @movie.image.attached? %>
+        <%= image_tag(@movie.image, class: "img-fluid rounded", alt: @movie.name) %>
+      <% else %>
+        <img src="https://via.placeholder.com/300x400" class="img-fluid rounded" alt="<%= @movie.name %>">
+      <% end %>
+    </div>
+    <div class="col-md-8">
+      <h1><%= @movie.name %></h1>
+      <p><strong>Đạo diễn:</strong> <%= @movie.director %></p>
+      <p><strong>Diễn viên:</strong> <%= @movie.actors %></p>
+      <p><strong>Quốc gia:</strong> <%= @movie.country %></p>
+      <p><strong>Rạp chiếu:</strong> <%= @movie.movie_theater.name %></p>
+      <p><strong>Thể loại:</strong> <%= @movie.genre %></p>
+      <p><strong>Ngày phát hành:</strong> <%= @movie.releaseDate.strftime('%d/%m/%Y') %></p>
+      <%= link_to "Đặt vé", "", class: "btn btn-primary" %>
+    </div>
+  </div>
+  <div class="description">
+    <h2><%= @movie.description %></h2>
+  </div>
+</div>

@@ -1,0 +1,63 @@
+/* app/assets/stylesheets/movies.css */
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f2f2f2;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+h1 {
+  text-align: center;
+  color: #333;
+}
+
+.movie-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+  list-style-type: none;
+  padding: 0;
+}
+
+.movie {
+  background-color: #fff;
+  border: 1px solid #ddd; /* Thêm border cho từng phim */
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.movie h2 {
+  font-size: 24px;
+  margin: 0;
+}
+
+.movie p {
+  margin: 5px 0;
+}
+
+.movie .info {
+  font-size: 14px;
+  color: #888;
+}
+
+.movie .description {
+  font-size: 16px;
+}
+
+.movie .genre {
+  margin-top: 10px;
+}
+
+.movie .releaseDate {
+  font-weight: bold;
+}
+.card-body{
+  text-align: center;
+}

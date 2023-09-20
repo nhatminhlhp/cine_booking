@@ -1,5 +1,4 @@
 class Authorizations::UsersController < ApplicationController
-  before_action :authorized
   def index
   end
 
@@ -13,7 +12,7 @@ class Authorizations::UsersController < ApplicationController
       flash[:success] = "Register success"
       redirect_to login_path
     else
-      flash[:success] = "Register failed"
+      flash[:danger] = "Register failed"
       render :new
     end
   end

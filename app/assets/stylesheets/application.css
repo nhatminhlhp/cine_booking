@@ -16,7 +16,9 @@
 @import "bootstrap";
 @import "sessions";
 @import "layout";
+@import "movies";
+@import "sidebar";
 
-a{
+a {
   cursor: pointer !important;
 }
