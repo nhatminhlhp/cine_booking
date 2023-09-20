@@ -1,7 +1,12 @@
 Rails.application.routes.draw do
-  get     "login"    => "sessions#new"
-  post    "login"    => "sessions#create"
-  delete  "logout"   => "sessions#destroy"
+  get     "login"    => "authorizations/sessions#new"
+  post    "login"    => "authorizations/sessions#create"
+  delete  "logout"   => "authorizations/sessions#destroy"
+  namespace :authorizations do
+    resources :users
+  end
 
-  resources :users
+  namespace :users do
+    resources :profile
+  end
 end

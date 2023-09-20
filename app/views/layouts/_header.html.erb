@@ -1,10 +1,16 @@
 <div class="header">
 	<div class="header-top">
-		<div class="header-top__box">
-			<a>Đăng nhập</a>
-			<div class="header-top__box__border">|</div> 
-			<a>Đăng ký</a>	
-		</div>
+	  <% unless @current_user.present? %>
+			<div class="header-top__box">
+				<a>Đăng nhập</a>
+				<div class="header-top__box__border">|</div> 
+				<a>Đăng ký</a>	
+			</div>
+		<% else %>
+			<div class="header-top__box">
+				<%= link_to "logout", logout_path(@current_user), method: :delete %>
+			</div>
+		<% end %>
 	</div>
 	<div class="header-bottom">
 		<div class="header-bottom__box">

@@ -1,5 +1,5 @@
-class UsersController < ApplicationController
-
+class Authorizations::UsersController < ApplicationController
+  before_action :authorized
   def index
   end
 
@@ -11,7 +11,7 @@ class UsersController < ApplicationController
     @user = User.new user_params
     if @user.save
       flash[:success] = "Register success"
-      redirect_to users_path
+      redirect_to login_path
     else
       flash[:success] = "Register failed"
       render :new
@@ -19,7 +19,7 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find_by id: params[:id]
+    @user = User.find_by(id: params[:id])
   end
 
   private

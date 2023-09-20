@@ -1,4 +1,4 @@
-class SessionsController < ApplicationController
+class Authorizations::SessionsController < ApplicationController
   def new
   end
 
@@ -7,7 +7,8 @@ class SessionsController < ApplicationController
     if user && user.authenticate(params[:session][:password])
       flash[:success] = "Login success"
       log_in user
-      redirect_to user
+      redirect_to authorizations_users_path
+
     else
       flash[:danger] = "Invalid email/password combination"
       render :new
@@ -19,5 +20,4 @@ class SessionsController < ApplicationController
     flash[:success] = "You are logged out"
     redirect_to login_path
   end
-
 end
