@@ -1,3 +1,3 @@
-class Authorizations::BaseController < ApplicationController
+class Users::BaseController < ApplicationController
   before_action :authorized
 end

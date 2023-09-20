@@ -1,0 +1,28 @@
+<div class="container">
+  <h1 class="text-center">Danh sách phim</h1>
+  <div class="" style="flex-wrap: wrap; display: flex; justify-content: space-around; row-gap: 20px">
+    <% @movies.each do |movie| %>
+      <%= link_to users_movie_path(movie), class: "card-link" do %>
+        <div class="" style="overflow: hidden; width: 300px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+          <div class="card mb-4">
+            <% if movie.image.attached? %>
+              <%= image_tag(movie.image, class: "card-img-top", alt: movie.name) %>
+            <% else %>
+              <img src="https://via.placeholder.com/300x400" class="card-img-top" alt="<%= movie.name %>">
+            <% end %>
+            <div class="card-body">
+              <h5 class="card-title">
+                <strong><%= movie.name %></strong>
+              </h5>
+              <p class="card-text">
+                <strong>Rạp chiếu:</strong> <%= movie.movie_theater.name %><br>
+                <strong>Thể loại:</strong> <%= movie.genre %> <br>
+                <strong>Ngày phát hành:</strong> <%= movie.releaseDate.strftime('%d/%m/%Y') %><br>
+              </p>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+</div>

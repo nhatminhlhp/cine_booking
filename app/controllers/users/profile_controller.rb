@@ -1,4 +1,4 @@
-class Users::ProfileController < Authorizations::BaseController
+class Users::ProfileController < Users::BaseController
   def show
     current_user
   end

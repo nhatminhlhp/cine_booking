@@ -7,8 +7,7 @@ class Authorizations::SessionsController < ApplicationController
     if user && user.authenticate(params[:session][:password])
       flash[:success] = "Login success"
       log_in user
-      redirect_to authorizations_users_path
-
+      redirect_to users_movies_path
     else
       flash[:danger] = "Invalid email/password combination"
       render :new

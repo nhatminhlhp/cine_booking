@@ -1,2 +1,3 @@
-class MovieTheaters < ApplicationRecord
+class MovieTheater < ApplicationRecord
+  has_many :movies
 end
